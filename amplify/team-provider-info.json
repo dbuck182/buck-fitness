@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifyae0bc5ef37cb4-staging-171316-authRole",
+      "UnauthRoleArn": "arn:aws:iam::103600008368:role/amplify-amplifyae0bc5ef37cb4-staging-171316-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::103600008368:role/amplify-amplifyae0bc5ef37cb4-staging-171316-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-amplifyae0bc5ef37cb4-staging-171316-deployment",
+      "UnauthRoleName": "amplify-amplifyae0bc5ef37cb4-staging-171316-unauthRole",
+      "StackName": "amplify-amplifyae0bc5ef37cb4-staging-171316",
+      "StackId": "arn:aws:cloudformation:us-east-2:103600008368:stack/amplify-amplifyae0bc5ef37cb4-staging-171316/0dcd4070-23fc-11ee-9df6-02e607a90f99",
+      "AmplifyAppId": "d37m23hbn7l5qn"
+    },
+    "categories": {
+      "auth": {
+        "buckfitnesscb89f31d": {}
+      }
+    }
+  }
+}
