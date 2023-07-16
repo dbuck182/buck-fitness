@@ -1,0 +1,14 @@
+{
+  "resourceName": "fitappstorage",
+  "policyUUID": "8c3f27b5",
+  "bucketName": "buckfitness885e68a10c434fbea7f3f2ce5bc1e6df",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
