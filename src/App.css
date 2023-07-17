@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+#Buckimg {
+  height:50px;
+  align-self: center;
+  margin-right: auto;
+}
+
+.navbar {
+  display: flex;
+  background-color: #3c414a;
+  flex-direction: row;
+  padding-left: 10px;
+}

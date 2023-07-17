@@ -17,9 +17,13 @@ import {
   createNote as createNoteMutation,
   deleteNote as deleteNoteMutation,
 } from "./graphql/mutations";
+import Navbar from "./components/Navbar";
 
 const App = ({ signOut }) => {
   const [notes, setNotes] = useState([]);
+
+  const [createView, setCreateView] = useState({create_view: false,
+                                                list_view: true})
 
   useEffect(() => {
     fetchNotes();
@@ -69,14 +73,26 @@ const App = ({ signOut }) => {
     });
   }
 
+  // Toggle what is shown on Screen
+  function create_shown() {
+    setCreateView(prevShown => ({create_view: true,
+                                list_view: false}))
+  }
+  function create_hidden(){
+    setCreateView(prevShown => ({create_view: false,
+                                list_view: true}))
+  }
+
   return (
     <View className="App">
-      <Heading level={1}>My Notes App</Heading>
+      <Navbar show={create_shown} hide={create_hidden}/>
+      <Heading level={2}>{createView.create_view ? "Workout Builder" : "Current Workouts"}</Heading>
+      {createView.create_view && 
       <View as="form" margin="3rem 0" onSubmit={createNote}>
-        <Flex direction="row" justifyContent="center">
+        <Flex direction="column" justifyContent="center">
           <TextField
             name="name"
-            placeholder="Note Name"
+            placeholder="Type of Workout/Name"
             label="Note Name"
             labelHidden
             variation="quiet"
@@ -84,7 +100,7 @@ const App = ({ signOut }) => {
           />
           <TextField
             name="description"
-            placeholder="Note Description"
+            placeholder="Workout Description"
             label="Note Description"
             labelHidden
             variation="quiet"
@@ -97,12 +113,12 @@ const App = ({ signOut }) => {
             style={{ alignSelf: "end" }}
           />
           <Button type="submit" variation="primary">
-            Create Note
+            Create Workout
           </Button>
         </Flex>
-      </View>
-      <Heading level={2}>Current Notes</Heading>
-      <View margin="3rem 0">
+      </View>}
+
+      {createView.list_view && <View margin="3rem 0">
       {notes.map((note) => (
         <Flex
           key={note.id || note.name}
@@ -126,7 +142,7 @@ const App = ({ signOut }) => {
     </Button>
   </Flex>
 ))}
-      </View>
+      </View>}
       <Button onClick={signOut}>Sign Out</Button>
     </View>
   );
